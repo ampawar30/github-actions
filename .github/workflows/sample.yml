@@ -12,3 +12,12 @@ jobs:
         run: |
           node -v
           npm -v
+  run-windows-command:
+    runs-on: windows-latest
+    needs: ["run-shell-command"] #Will Run/Cause Serial Running of Jobs
+    steps:
+      - name: Dir PowerShell
+        run: Get-Location
+      - name: Dir Bash
+        run: pwd
+        shell: bash
