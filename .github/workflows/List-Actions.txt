@@ -3,3 +3,11 @@ ampawar30/github-actions
 /home/runner/work/github-actions/github-actions
 
 crontab.guru
+https://docs.github.com/en/rest/reference/repos#create-a-repository-dispatch-event
+https://api.github.com/repos/ampawar30/github-actions
+
+//POST
+https://api.github.com/repos/ampawar30/github-actions/dispatches
+{
+    "event_type": "build"
+}
