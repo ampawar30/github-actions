@@ -1,0 +1,16 @@
+name: Actions Pull Request Workflow
+
+on: [push, pull_request]
+
+jobs:
+  run-github-pull-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List Files
+        run: |
+          pwd
+          ls -a
+          echo $GITHUB_SHA #latest commit for force checkout
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo "${{ github.token }}"
