@@ -1,0 +1,16 @@
+name: Actions Cron Job Workflow
+
+on:
+  schedule:
+    - cron: "0/5 * * * *"
+    - cron: "0/5 * * * *"
+  pull_request:
+    types: [closed, assigned, opened, reopened]
+jobs:
+  run-github-cron-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List Files
+        run: |
+          pwd
+          ls -a
