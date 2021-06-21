@@ -5,6 +5,14 @@ on:
     types: [build]
   pull_request:
     types: [closed, assigned, opened, reopened]
+  push:
+    branches:
+      - master
+      - 'release**'
+      - '!premaster'
+    tags:
+      - v1
+
 jobs:
   run-github-repo-actions:
     runs-on: ubuntu-latest
