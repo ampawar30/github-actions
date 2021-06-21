@@ -1,0 +1,13 @@
+name: Repo DispatchAction
+
+on:
+  repository_dispatch:
+    types: [build]
+  pull_request:
+    types: [closed, assigned, opened, reopened]
+jobs:
+  run-github-repo-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Payload
+        run: echo ${{ github.event.client_payload.env }}
