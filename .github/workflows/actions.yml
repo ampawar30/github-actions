@@ -5,15 +5,15 @@ on: [push]
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
+    stratergy:
+      matrix:
+        python-version: [3.8]
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }
-        run: |
-          pwd
-          ls -a
       - name: Checkout
         uses: actions/checkout@v2
       - name: List Files After Checkout Latest commit
