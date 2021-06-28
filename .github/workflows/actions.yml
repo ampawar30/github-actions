@@ -5,7 +5,7 @@ on: [push]
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
-    stratergy:
+    strategy:
       matrix:
         python-version: [3.8]
     steps:
